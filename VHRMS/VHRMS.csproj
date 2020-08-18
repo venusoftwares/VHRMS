@@ -45,10 +45,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -155,11 +162,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\COMMON\ConcernMastersController.cs" />
+    <Compile Include="Controllers\COMMON\LicenseMastersController.cs" />
+    <Compile Include="Controllers\COMMON\PageMastersController.cs" />
+    <Compile Include="Controllers\COMMON\PermissionRolesController.cs" />
+    <Compile Include="Controllers\COMMON\UserRolesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConcernMaster.cs" />
+    <Compile Include="Models\DatabaseContext.cs" />
+    <Compile Include="Models\LicenseMaster.cs" />
+    <Compile Include="Models\PageMaster.cs" />
+    <Compile Include="Models\PermissionRole.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,10 +231,36 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\PageMasters\Create.cshtml" />
+    <Content Include="Views\PageMasters\Delete.cshtml" />
+    <Content Include="Views\PageMasters\Details.cshtml" />
+    <Content Include="Views\PageMasters\Edit.cshtml" />
+    <Content Include="Views\PageMasters\Index.cshtml" />
+    <Content Include="Views\UserRoles\Create.cshtml" />
+    <Content Include="Views\UserRoles\Delete.cshtml" />
+    <Content Include="Views\UserRoles\Details.cshtml" />
+    <Content Include="Views\UserRoles\Edit.cshtml" />
+    <Content Include="Views\UserRoles\Index.cshtml" />
+    <Content Include="Views\LicenseMasters\Create.cshtml" />
+    <Content Include="Views\LicenseMasters\Delete.cshtml" />
+    <Content Include="Views\LicenseMasters\Details.cshtml" />
+    <Content Include="Views\LicenseMasters\Edit.cshtml" />
+    <Content Include="Views\LicenseMasters\Index.cshtml" />
+    <Content Include="Views\ConcernMasters\Create.cshtml" />
+    <Content Include="Views\ConcernMasters\Delete.cshtml" />
+    <Content Include="Views\ConcernMasters\Details.cshtml" />
+    <Content Include="Views\ConcernMasters\Edit.cshtml" />
+    <Content Include="Views\ConcernMasters\Index.cshtml" />
+    <Content Include="Views\PermissionRoles\Create.cshtml" />
+    <Content Include="Views\PermissionRoles\Delete.cshtml" />
+    <Content Include="Views\PermissionRoles\Details.cshtml" />
+    <Content Include="Views\PermissionRoles\Edit.cshtml" />
+    <Content Include="Views\PermissionRoles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Controllers\MASTERS\" />
+    <Folder Include="Controllers\TRANSACTIONS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

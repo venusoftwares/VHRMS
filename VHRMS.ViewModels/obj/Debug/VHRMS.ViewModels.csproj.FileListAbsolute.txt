@@ -1,0 +1,5 @@
+D:\VENU SOFTWARES\PAYROLL SOFTWARES\VHRMS.ViewModels\bin\Debug\VHRMS.ViewModels.dll
+D:\VENU SOFTWARES\PAYROLL SOFTWARES\VHRMS.ViewModels\bin\Debug\VHRMS.ViewModels.pdb
+D:\VENU SOFTWARES\PAYROLL SOFTWARES\VHRMS.ViewModels\obj\Debug\VHRMS.ViewModels.csproj.CoreCompileInputs.cache
+D:\VENU SOFTWARES\PAYROLL SOFTWARES\VHRMS.ViewModels\obj\Debug\VHRMS.ViewModels.dll
+D:\VENU SOFTWARES\PAYROLL SOFTWARES\VHRMS.ViewModels\obj\Debug\VHRMS.ViewModels.pdb

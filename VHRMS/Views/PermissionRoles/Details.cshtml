@@ -1,0 +1,91 @@
+﻿@model VHRMS.Models.PermissionRole
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PermissionRole</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PageMaster.Page)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageMaster.Page)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserRole.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserRole.Role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Add)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Add)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.View)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.View)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Delete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Delete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
