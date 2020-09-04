@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
@@ -52,6 +58,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -162,11 +169,17 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Common\DashboardMastersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Common\ConcernMastersController.cs" />
+    <Compile Include="Controllers\Common\LicenseMastersController.cs" />
+    <Compile Include="Controllers\Common\RoleMastersController.cs" />
+    <Compile Include="Controllers\Common\RolePermissionMastersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -219,10 +232,38 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ConcernMasters\Create.cshtml" />
+    <Content Include="Views\ConcernMasters\Delete.cshtml" />
+    <Content Include="Views\ConcernMasters\Details.cshtml" />
+    <Content Include="Views\ConcernMasters\Edit.cshtml" />
+    <Content Include="Views\ConcernMasters\Index.cshtml" />
+    <Content Include="Views\LicenseMasters\Create.cshtml" />
+    <Content Include="Views\LicenseMasters\Delete.cshtml" />
+    <Content Include="Views\LicenseMasters\Details.cshtml" />
+    <Content Include="Views\LicenseMasters\Edit.cshtml" />
+    <Content Include="Views\LicenseMasters\Index.cshtml" />
+    <Content Include="Views\DashboardMasters\Create.cshtml" />
+    <Content Include="Views\DashboardMasters\Delete.cshtml" />
+    <Content Include="Views\DashboardMasters\Details.cshtml" />
+    <Content Include="Views\DashboardMasters\Edit.cshtml" />
+    <Content Include="Views\DashboardMasters\Index.cshtml" />
+    <Content Include="Views\RoleMasters\Create.cshtml" />
+    <Content Include="Views\RoleMasters\Delete.cshtml" />
+    <Content Include="Views\RoleMasters\Details.cshtml" />
+    <Content Include="Views\RoleMasters\Edit.cshtml" />
+    <Content Include="Views\RoleMasters\Index.cshtml" />
+    <Content Include="Views\RolePermissionMasters\Create.cshtml" />
+    <Content Include="Views\RolePermissionMasters\Delete.cshtml" />
+    <Content Include="Views\RolePermissionMasters\Details.cshtml" />
+    <Content Include="Views\RolePermissionMasters\Edit.cshtml" />
+    <Content Include="Views\RolePermissionMasters\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Controllers\Leave\" />
+    <Folder Include="Controllers\Master\" />
+    <Folder Include="Controllers\Report\" />
+    <Folder Include="Controllers\Transaction\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -252,6 +293,24 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VHRMS.Models\VHRMS.Models.csproj">
+      <Project>{fef6a49c-2430-4a43-91cd-6532161c93e0}</Project>
+      <Name>VHRMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VHRMS.Repository\VHRMS.Repository.csproj">
+      <Project>{27dac411-f220-4b61-8b60-cfe871a300f7}</Project>
+      <Name>VHRMS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VHRMS.Utilities\VHRMS.Utilities.csproj">
+      <Project>{87add59e-4153-4aeb-9d24-7f988f11def8}</Project>
+      <Name>VHRMS.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VHRMS.ViewModels\VHRMS.ViewModels.csproj">
+      <Project>{47c0aa47-570b-4448-9d0d-a0c67617bc82}</Project>
+      <Name>VHRMS.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

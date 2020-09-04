@@ -43,5 +43,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VHRMS.Models\VHRMS.Models.csproj">
+      <Project>{fef6a49c-2430-4a43-91cd-6532161c93e0}</Project>
+      <Name>VHRMS.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

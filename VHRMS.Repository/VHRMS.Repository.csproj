@@ -43,5 +43,19 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VHRMS.Models\VHRMS.Models.csproj">
+      <Project>{fef6a49c-2430-4a43-91cd-6532161c93e0}</Project>
+      <Name>VHRMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VHRMS.Utilities\VHRMS.Utilities.csproj">
+      <Project>{87add59e-4153-4aeb-9d24-7f988f11def8}</Project>
+      <Name>VHRMS.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VHRMS.ViewModels\VHRMS.ViewModels.csproj">
+      <Project>{47c0aa47-570b-4448-9d0d-a0c67617bc82}</Project>
+      <Name>VHRMS.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
