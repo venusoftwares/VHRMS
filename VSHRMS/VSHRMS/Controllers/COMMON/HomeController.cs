@@ -30,26 +30,11 @@ namespace VSHRMS.Controllers
 
             ViewBag.Title = "Home Page";
 
-            if(DashboardName == "SuperAdminDashboard")
+            if(DashboardName == null)
             {
-                return View("SuperAdminDashboard", dashboardViewModel);
+                return RedirectToAction("Login", "Home");
             }
-            if (DashboardName == "ManagerDashboard")
-            {
-                return View("ManagerDashboard", dashboardViewModel);
-            }
-            if (DashboardName == "HrDashboard")
-            {
-                return View("HrDashboard", dashboardViewModel);
-            }
-            if (DashboardName == "StaffDashboard")
-            {
-                return View("StaffDashboard", dashboardViewModel);
-            }
-            else
-            {
-                return View("StaffDashboard", dashboardViewModel);
-            }
+            return View(DashboardName, dashboardViewModel);
         }
 
         public ActionResult SuperAdminDashboard(DashboardViewModel dashboardViewModel)
@@ -71,7 +56,12 @@ namespace VSHRMS.Controllers
         public ActionResult ShowMenus()
         {
             int RoleCode = Convert.ToInt32(Session["RoleCode"]);
-            var showmenu = db.RolePermissionMaster.Where(x => x.RoleCode == RoleCode).Select(x => new ShowMenuItems()
+            var showmenu = db.RolePermissionMaster.Where(x => x.RoleCode == RoleCode && 
+            (x.Add == true 
+            || x.Edit == true 
+            || x.Delete == true
+            || x.View == true
+            )).Select(x => new ShowMenuItems()
             {
                 MainMenu = x.MapPages.MainMenu,
                 SubMenu = x.MapPages.SubMenu,
@@ -117,6 +107,7 @@ namespace VSHRMS.Controllers
                         Session["UserName"] = aa.UserName;
                         Session["Password"] = aa.Password;
                         Session["RoleCode"] = aa.RoleCode;
+                        Session["UserId"] = aa.id;
                         return RedirectToAction("Index", "Home");
                     }
                 }

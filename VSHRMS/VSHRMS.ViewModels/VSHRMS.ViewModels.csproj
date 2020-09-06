@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="COMMON\DashboardViewModel.cs" />
+    <Compile Include="JQUERYDATATABLES\JqueryDatatableParam.cs" />
+    <Compile Include="MASTER\CategoryMasterViewModel.cs" />
+    <Compile Include="MASTER\DesignationMasterViewModel.cs" />
+    <Compile Include="MASTER\DepartmentMasterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

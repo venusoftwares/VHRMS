@@ -22,8 +22,12 @@ namespace VSHRMS.Providers
             int RoleCode = Convert.ToInt32(session["RoleCode"]);
             try
             {
-                var ActionName = filterContext.ActionDescriptor.ActionName;  
-                var chech = db.RoleMaster.Include(p => p.DashboardMaster).Any(x=>x.DashboardMaster.Dashboard  == ActionName && x.id == RoleCode );
+                var ControllerName = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;  
+                var chech = db.RolePermissionMaster.Include(p => p.MapPages).Any(x=>x.MapPages.ControllerName  == ControllerName && x.RoleCode == RoleCode && (
+                x.Add == true ||
+                x.Edit == true ||
+                x.Delete == true ||
+                x.View == true));
                 if (controller != null)
                 {
                     if (session["ConCode"] == null)

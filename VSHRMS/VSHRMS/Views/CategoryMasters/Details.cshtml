@@ -1,0 +1,61 @@
+﻿@model VSHRMS.Models.CategoryMaster
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CategoryMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WagesType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WagesType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntimeOutTimePunch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntimeOutTimePunch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PresentHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PresentHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OTHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OTHour)
+        </dd>
+
+ 
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

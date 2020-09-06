@@ -1,0 +1,79 @@
+﻿@model IEnumerable<VSHRMS.ViewModels.COMMON.ShowMenuItems>
+
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+<br />
+<a href="/Home/Index" style="color:yellow">DASHBOARD</a>
+@if (Model.Any(x => x.MainMenu == "Master"))
+{
+<button class="dropdown-btn">
+    MASTER
+    <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-container">
+    @if (Model.Any(x => x.SubMenu == "Category Master"))
+    {
+        <a href="/CategoryMasters/Index">CATEGORY MASTER</a>
+    }
+    @if (Model.Any(x => x.SubMenu == "Department Master"))
+    {
+        <a href="/DepartmentMasters/Index">DEPARTMENT MASTER</a>
+    }
+    @if (Model.Any(x => x.SubMenu == "Designation Master"))
+    {
+        <a href="/DesignationMasters/Index">DESIGNATION MASTER</a>
+    }
+
+    
+
+
+
+</div>
+}
+
+@if (Model.Any(x => x.MainMenu == "Transaction" ))
+{
+<button class="dropdown-btn">
+    TRANSACTION
+    <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-container">
+    @if (Model.Any(x => x.SubMenu == "Attendance Daily"))
+    {
+        <a href="/PurchaseMasters/Index">PURCHASE</a>
+    }
+ 
+
+
+    @*<a href="/CashPayment/Index">CASH PAYMENT</a>
+        <a href="/CashReceived/Index">CASH RECEIVED</a>*@
+</div>
+}
+
+ 
+ 
+<a href="/Home/About" style="color:greenyellow">ABOUT</a>
+
+<a href="/Home/Login" style="color:red">LOG OUT</a>
+
+ 
+
+
+<script>
+
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
